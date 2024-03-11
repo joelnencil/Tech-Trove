@@ -1,2 +1,2 @@
-# Tech-Trove
-A Gadget Accessories Website
+# techtrove
+ A Mobile Accessories Website

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/main.css') }}">
+    </head>
+    <body>
+        <form>
+            <h1>Login</h1>
+            <div class="textBoxdiv">
+                <input type = "text" placeholder="Username" >
+            </div>
+            <div class="textBoxdiv">
+                <input type = "password" placeholder= "Password">
+            </div>
+            <input type = "submit" value = "Login" class="loginbtn">
+            <div class="signup">
+                New Member? 
+                <br>
+                <a href="#" style="color:grey;">Sign Up</a>
+            </div>
+        </form>
+    </body>
+</html> 
