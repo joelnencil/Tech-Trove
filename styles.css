@@ -1,0 +1,73 @@
+body {
+    background-color: #344a72;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .signup-box {
+    width: 360px;
+    height: 620px;
+    margin: 50px auto; /* Added margin for better positioning */
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px; /* Added padding for spacing */
+  }
+  
+  h1 {
+    text-align: center;
+    padding-top: 15px;
+  }
+  
+  h4 {
+    text-align: center;
+  }
+  
+  form {
+    width: 300px;
+    margin: 0 auto; /* Center the form */
+  }
+  
+  form label {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  form input {
+    width: calc(100% - 14px); /* Adjusted width to accommodate padding */
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 5px; /* Added margin for spacing between inputs */
+  }
+  
+  input[type="submit"] {
+    width: 100%; /* Make submit button full width */
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px; /* Added border radius to match other inputs */
+    cursor: pointer; /* Added cursor pointer for better UX */
+  }
+  
+  p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+  }
+  
+  .para-2 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px; /* Changed margin-top to positive value */
+  }
+  
+  .para-2 a {
+    color: #49c1a2;
+    text-decoration: none; /* Removed underline from links */
+  }
+  
