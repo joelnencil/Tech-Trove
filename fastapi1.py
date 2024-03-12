@@ -1,5 +1,6 @@
 import fastapi
 from fastapi import FastAPI, APIRouter, Depends, Request,status,Form
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from models import UserDetails
 from pydantic import BaseModel
@@ -23,6 +24,7 @@ async def get_db():
         db.close()
 app = FastAPI()
 router = APIRouter()
+app.mount("/static",StaticFiles(directory="static"),name="static")
 templates = Jinja2Templates(directory="templates")
 
 class User(BaseModel):
@@ -33,18 +35,16 @@ class User(BaseModel):
 def form(request:Request):
     return templates.TemplateResponse("/index.html",{"request":request})
 
-
-@app.post("/",response_class=HTMLResponse)
-async def login(email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
-    user_details = db.query(UserDetails).filter(UserDetails.email == email, UserDetails.password == password).first()
-    if user_details:
-        response= fastapi.responses.RedirectResponse(url='/dashboard',status_code=status.HTTP_302_FOUND)
-        return response
-    else:
-        return {"message": "Login failed"}
     
-@router.get("/dashboard",response_class=HTMLResponse)
+    
+@app.get("/home",response_class=HTMLResponse)
 def dashboard(request:Request):
     print("hello world")
-    return templates.TemplateResponse("/dashboard.html",{"request":request})
+    return templates.TemplateResponse("/techtrove1.html",{"request":request})
+
+@app.get("/register",response_class=HTMLResponse)
+def dashboard(request:Request):
+    print("hello world")
+    return templates.TemplateResponse("/register.html",{"request":request})
+
 
